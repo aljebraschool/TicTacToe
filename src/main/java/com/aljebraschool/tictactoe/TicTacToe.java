@@ -1,7 +1,7 @@
 //creating a tictactoe console game
 package com.aljebraschool.tictactoe;
 
-//importing the needed libraries used in this project
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,62 +9,62 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
-       //create two arraylist object to keep track of the playerPosition and cpuPosition in the game using list collection
+       
 private static List<Integer> playerPosition = new ArrayList<>();
 private static List<Integer> cpuPosition = new ArrayList<>();
    
-     //declaring the main method method  
+     
     public static void main(String[] args) {
-             //creating the game structure(game board) using a 2-D array 
+             
         char[][]gameBoard = {{' ','|',' ','|',' '},
                              {'-','+','-','+','-'},
                              {' ','|',' ','|',' '},
                              {'-','+','-','+','-'},
                              {' ','|',' ','|',' '}};
         
-        checkWinner(); //calling method to winner checkWinner
+        checkWinner(); 
        
-       //creating an infinite loop to keep asking for input
+      
        while(true){
-            Scanner input = new Scanner(System.in); //declaring the scanner object
-            System.out.print("Enter your placement (1-9): "); //prompt for input between 1-9
-            int playerPos = input.nextInt();   //read player input and store input in player position
+            Scanner input = new Scanner(System.in); 
+            System.out.print("Enter your placement (1-9): "); 
+            int playerPos = input.nextInt();   
           
-       /* check if arrayList playerPosition and cpuPosition contain player input to avoid overwritting on it*/
+       
             
             while(playerPosition.contains(playerPos) || cpuPosition.contains(playerPos)){
             
-                System.out.println("position taken! Enter a correct position");//return a string telling the user of position taken
-                playerPos = input.nextInt();  //read  player input and store input in player position
+                System.out.println("position taken! Enter a correct position");
+                playerPos = input.nextInt();  
             }
-            placeInput(gameBoard, playerPos, "player"); //after player input then, call the method to place his input
-           String winner = checkWinner();  //after placing user input check winner then store it return as a string
+            placeInput(gameBoard, playerPos, "player"); 
+           String winner = checkWinner();  
           
                 //check if "winner" string length is greater than 0     
 
            if(winner.length() > 0 ){
-           System.out.println(winner);//print user as winner
-           printGameBoard(gameBoard); //print gameBoard again
+           System.out.println(winner);
+           printGameBoard(gameBoard); 
 
            break;//break out of the while infinite loop
            
            }
             
-            Random rand = new Random(); //randomize the position of the cpu
-            int cpuPos = rand.nextInt(9) + 1;//store random number between 1 and 9 in cpuPos
+            Random rand = new Random(); 
+            int cpuPos = rand.nextInt(9) + 1;
           
-                 /* check if arrayList playerPosition and cpuPosition contain cpuPos input to avoid overwritting on it*/
+                
 
              while(playerPosition.contains(cpuPos) || cpuPosition.contains(cpuPos)){
             
-                cpuPos = rand.nextInt(9) + 1; //get cpu input and store input in player position
+                cpuPos = rand.nextInt(9) + 1; 
             }
             
-            placeInput(gameBoard,cpuPos, "cpu");//after cpu input then, call the method to place his input
+            placeInput(gameBoard,cpuPos, "cpu");
             
-           printGameBoard(gameBoard); //print gameBoard to see output(winner)
+           printGameBoard(gameBoard); 
            
-           winner = checkWinner();//after placing cpu input check winner then store it return as a string
+           winner = checkWinner();
            if(winner.length() > 0 ){
            System.out.println(winner);
            printGameBoard(gameBoard); 
