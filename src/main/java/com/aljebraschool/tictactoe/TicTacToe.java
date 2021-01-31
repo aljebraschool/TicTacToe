@@ -128,8 +128,7 @@ private static List<Integer> cpuPosition = new ArrayList<>();
         return "";   //return null;
        
   }//end checkWinner method
-    
-    
+      
  //method to print gameBoard
     private static void printGameBoard(char[][] gameBoard){
         //looping through the first row
@@ -205,3 +204,4 @@ private static List<Integer> cpuPosition = new ArrayList<>();
     
     
 }//end class TicTacToe
+
