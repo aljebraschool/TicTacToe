@@ -5,4 +5,4 @@ It is implemented on the console.
 Some java concepts that was used in this project are;
 Data Structure
 Methods
-Loops and conditional statements
+Loops and conditional statements.
